@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="巴黎外方传教会传教士泰奥多尔·蒙贝格 1897–1912 年 9 封书信的法文转录与中文译文，逐段对照。">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>蒙贝格神父书信</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: archive reading desk. Squared-paper masthead, sticky toolbar, one sheet per letter with French | Chinese rows aligned paragraph by paragraph. */
+:root {
+  --paper: #f3f4f7;
+  --sheet: #ffffff;
+  --ink: #1b2030;
+  --muted: #596075;
+  --rule: #d8dbe4;
+  --grid: #dde1ea;
+  --violet: #57398f;
+  --violet-soft: #eee9f7;
+  --red: #a2403b;
+  --red-soft: #f7e7e5;
+  --f-display: "Spectral", Georgia, "Times New Roman", serif;
+  --f-fr: "Spectral", Georgia, "Times New Roman", serif;
+  --f-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", "Source Han Serif SC", serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --bar-h: 56px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12141a; --sheet: #191c24; --ink: #e3e6ee; --muted: #9aa1b4; --rule: #2b2f3b;
+    --grid: #20242f; --violet: #b8a2e8; --violet-soft: #272040; --red: #e38a83; --red-soft: #3a2325;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12141a; --sheet: #191c24; --ink: #e3e6ee; --muted: #9aa1b4; --rule: #2b2f3b;
+  --grid: #20242f; --violet: #b8a2e8; --violet-soft: #272040; --red: #e38a83; --red-soft: #3a2325;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-zh);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--paper);
+}
+a { color: var(--violet); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; border-radius: 3px; }
+.mono { font-family: var(--f-mono); }
+.small { font-size: 12px; }
+.muted { color: var(--muted); }
+.wrap {
+  max-width: 1180px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Masthead on squared paper, like the letters' own papier quadrillé */
+.mast {
+  background-color: var(--sheet);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 22px 22px;
+  border-bottom: 1px solid var(--rule);
+}
+.mast .wrap { padding-block: 44px 36px; display: grid; gap: 14px; }
+.callno {
+  font: 500 12px/1 var(--f-mono); letter-spacing: .08em; color: var(--violet);
+  display: flex; flex-wrap: wrap; gap: 6px 14px;
+}
+.mast h1 {
+  margin: 0; font-family: var(--f-zh); font-weight: 600;
+  font-size: clamp(30px, 5vw, 46px); line-height: 1.2; text-wrap: balance;
+}
+.mast .fr-title {
+  margin: 0; font: italic 400 clamp(18px, 2.4vw, 23px)/1.35 var(--f-display); color: var(--muted);
+}
+.mast .lede { margin: 6px 0 0; max-width: 62ch; font-size: 16px; }
+
+/* Sticky toolbar */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+}
+.bar .wrap { min-height: var(--bar-h); display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; padding-block: 8px; }
+.bar .lbl { font: 500 11px var(--f-mono); letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+.jump { display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1 1 280px; }
+.jump nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.jump nav a {
+  flex: none; display: grid; place-items: center; width: 30px; height: 30px;
+  font: 500 13px var(--f-mono); text-decoration: none; color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--sheet);
+}
+.jump nav a:hover { border-color: var(--violet); color: var(--violet); }
+.mode { display: flex; align-items: center; gap: 8px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--sheet); }
+.seg button {
+  font: 500 13px var(--f-zh); color: var(--muted); background: transparent; border: 0;
+  padding: 6px 12px; cursor: pointer;
+}
+.seg button + button { border-left: 1px solid var(--rule); }
+.seg button[aria-pressed="true"] { background: var(--violet); color: var(--sheet); }
+
+/* Intro: about + legend + index */
+.intro { padding-block: 36px 8px; display: grid; gap: 28px; }
+.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px 36px; }
+.about section { min-width: 0; }
+.about h2, .index h2 {
+  margin: 0 0 8px; font: 500 12px var(--f-mono); letter-spacing: .1em; color: var(--muted); text-transform: uppercase;
+}
+.about p { margin: 0 0 8px; }
+.legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.legend li { display: flex; gap: 10px; align-items: baseline; }
+.legend .sw { flex: none; width: 4.5em; font-family: var(--f-fr); }
+.tablewrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); }
+table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+tr:last-child td { border-bottom: 0; }
+th { font: 500 11px var(--f-mono); letter-spacing: .08em; color: var(--muted); text-transform: uppercase; background: var(--paper); }
+td a { font-weight: 500; text-decoration: none; }
+td.small { line-height: 1.6; }
+
+/* Marks */
+.unc {
+  color: var(--violet); font: 600 .72em var(--f-mono); vertical-align: super; line-height: 0;
+  margin-left: 1px; cursor: help;
+}
+.gap { color: var(--red); font-family: var(--f-mono); font-size: .85em; white-space: nowrap; }
+.ed { color: var(--muted); }
+del { color: var(--muted); text-decoration-color: var(--red); text-decoration-thickness: 1.5px; }
+.pg {
+  display: inline-block; font: 500 10.5px/1.5 var(--f-mono); color: var(--violet);
+  border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; margin: 0 3px;
+  vertical-align: 2px; white-space: nowrap; font-style: normal;
+}
+.nref { line-height: 0; }
+.nref a { font: 500 .7em var(--f-mono); text-decoration: none; padding: 0 1px; }
+.flag {
+  display: inline-block; font: 500 12px/1.4 var(--f-zh); color: var(--red);
+  background: var(--red-soft); border-radius: 3px; padding: 2px 7px;
+}
+
+/* Letters */
+.letters { display: grid; gap: 28px; padding-block: 28px 48px; }
+.letter {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px;
+  scroll-margin-top: calc(var(--bar-h) + 24px + env(safe-area-inset-top, 0px));
+  overflow: hidden;
+}
+.lhead {
+  display: grid; grid-template-columns: auto 1fr; gap: 0 22px;
+  padding: 26px 28px 20px; border-bottom: 1px solid var(--rule);
+}
+.lnum {
+  font: 400 64px/0.9 var(--f-display); color: var(--violet); opacity: .85;
+  font-variant-numeric: lining-nums;
+}
+.lmeta { min-width: 0; }
+.eyebrow { margin: 0 0 4px; font: 500 12px var(--f-mono); letter-spacing: .06em; color: var(--muted); }
+.lmeta h2 { margin: 0; font: 600 24px/1.3 var(--f-zh); }
+.frdate { margin: 2px 0 12px; font: italic 400 17px var(--f-fr); color: var(--muted); }
+.lmeta dl { margin: 0; display: grid; gap: 4px; font-size: 14.5px; }
+.lmeta dl div { display: grid; grid-template-columns: 5em 1fr; gap: 12px; }
+.lmeta dt { color: var(--muted); }
+.lmeta dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.lmeta dd.mono { font-size: 12.5px; padding-top: 2px; }
+.flags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+
+.colheads, .row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 56px; }
+.colheads {
+  padding: 14px 28px 0; font: 500 11px var(--f-mono); letter-spacing: .1em; color: var(--muted); text-transform: uppercase;
+}
+.pairs {
+  padding: 10px 28px 28px; display: grid; gap: 14px;
+  background: linear-gradient(var(--rule), var(--rule)) center top / 1px 100% no-repeat;
+  background-origin: content-box;
+}
+.fr { font-family: var(--f-fr); font-size: 17.5px; line-height: 1.62; hyphens: auto; }
+.zh { font-family: var(--f-zh); font-size: 16.5px; line-height: 1.9; text-align: justify; }
+.row > div { min-width: 0; overflow-wrap: break-word; }
+.row.motto > div { text-align: right; font-style: italic; color: var(--muted); }
+.row.motto .zh { font-style: normal; }
+.row.ednote > div { font-size: 14px; line-height: 1.6; color: var(--muted); font-style: italic; }
+.row.ednote .zh { font-style: normal; }
+.row.marg > div { border-left: 2px dotted var(--violet); padding-left: 12px; }
+
+.notes { border-top: 1px solid var(--rule); padding: 18px 28px 22px; background: var(--paper); }
+.notes h3 { margin: 0 0 8px; font: 500 11px var(--f-mono); letter-spacing: .1em; color: var(--muted); }
+.notes ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.7; }
+.notes li { display: grid; grid-template-columns: 1.6em 1fr auto; gap: 4px; }
+.notes li:target { background: var(--violet-soft); border-radius: 4px; }
+.nnum { font: 500 12px/1.9 var(--f-mono); color: var(--violet); }
+.back { text-decoration: none; font-size: 13px; }
+
+/* Reading modes */
+main[data-mode="zh"] .fr, main[data-mode="fr"] .zh { display: none; }
+main[data-mode="zh"] .row, main[data-mode="fr"] .row,
+main[data-mode="zh"] .colheads, main[data-mode="fr"] .colheads { grid-template-columns: minmax(0, 1fr); }
+main[data-mode="zh"] .pairs, main[data-mode="fr"] .pairs { background: none; }
+main[data-mode="zh"] .pairs > *, main[data-mode="fr"] .pairs > *,
+main[data-mode="zh"] .colheads > *, main[data-mode="fr"] .colheads > * { max-width: 40em; }
+
+footer { border-top: 1px solid var(--rule); }
+footer .wrap { padding-block: 22px 40px; font-size: 13.5px; color: var(--muted); display: grid; gap: 4px; }
+footer p { margin: 0; }
+
+@media (max-width: 760px) {
+  .colheads { display: none; }
+  .row { grid-template-columns: minmax(0, 1fr); row-gap: 8px; }
+  main[data-mode="both"] .row .zh { padding-left: 12px; border-left: 2px solid var(--violet-soft); }
+  main[data-mode="both"] .row.marg .zh { border-left-style: dotted; border-left-color: var(--violet); }
+  .pairs { background: none; padding: 16px 18px 22px; gap: 18px; }
+  .lhead { padding: 20px 18px 16px; gap: 0 14px; }
+  .lnum { font-size: 44px; }
+  .lmeta h2 { font-size: 21px; }
+  .lmeta dl div { grid-template-columns: 4.5em 1fr; gap: 8px; }
+  .notes { padding: 16px 18px 18px; }
+  .fr { font-size: 17px; }
+  .zh { font-size: 16px; text-align: left; }
+  .mast .wrap { padding-block: 32px 26px; }
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="callno"><span>IRFA</span><span>4CTi-MAR-020</span><span>MEP · Mission du Thibet</span></div>
+    <h1>蒙贝格神父书信</h1>
+    <p class="fr-title" lang="fr">Lettres du P. Théodore Monbeig, 1897–1912</p>
+    <p class="lede">巴黎外方传教会西藏传教区传教士泰奥多尔·蒙贝格的 9 封亲笔信，从他在波城服兵役的 1897 年，写到 1912 年在滇西北茨菇、茨中一带传教。左栏为法文原文转录，右栏为中文译文，逐段对照。</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="jump"><span class="lbl">信件</span><nav aria-label="跳转到信件"><a href="#l1" title="1897 年 8 月 21 日">1</a><a href="#l2" title="1909 年 11 月 4 日">2</a><a href="#l3" title="1910 年（未写月日）">3</a><a href="#l4" title="1910 年 7 月 5 日">4</a><a href="#l5" title="1910 年 9 月 10 日">5</a><a href="#l6" title="1910 年 12 月 6 日">6</a><a href="#l7" title="1912 年 3 月 27 日">7</a><a href="#l8" title="1912 年 6 月 5 日">8</a><a href="#l9" title="1912 年 8 月 5 日">9</a></nav></div>
+    <div class="mode"><span class="lbl">显示</span>
+      <div class="seg" role="group" aria-label="阅读方式">
+        <button type="button" id="mode-both" data-mode="both" aria-pressed="true">对照</button>
+        <button type="button" id="mode-zh" data-mode="zh" aria-pressed="false">中文</button>
+        <button type="button" id="mode-fr" data-mode="fr" aria-pressed="false">法文</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main" data-mode="both">
+  <div class="wrap intro">
+    <div class="about">
+      <section>
+        <h2>写信人</h2>
+        <p>Théodore Monbeig，署名 “Th. Monbeig” 或 “Théodore”，1910 年自称 35 岁。家乡是法国西南部的萨利（Salies-de-Béarn）。兄弟埃米尔（Émile Monbeig）也在附近传教，第 9 封信末有他的附言。</p>
+        <p>收信人包括一位马赛的老朋友、约瑟夫·皮耶神父、外方传教会院长、当修女的表妹、兄弟阿道夫和父母。</p>
+      </section>
+      <section>
+        <h2>地名与日期</h2>
+        <p><span lang="fr">Tsekou</span> 即茨菇；<span lang="fr">Tsedjrong</span> 很可能是茨中（推断）；<span lang="fr">Oui-sy</span> 即维西，<span lang="fr">Siao-ouy-sy</span> 即小维西。</p>
+        <p>蒙贝格写的“5”很像“3”或“9”，档案文件名有三处日期因此读错。本页按信上实际所写标注，并在各信标题下注明。</p>
+      </section>
+      <section>
+        <h2>符号</h2>
+        <ul class="legend">
+          <li><span class="sw">serrée<span class="unc">?</span></span><span>辨认不确定</span></li>
+          <li><span class="sw"><span class="gap">[…]</span></span><span>原件缺损、被截掉或无法辨认</span></li>
+          <li><span class="sw"><del>demander</del></span><span>原稿中作者划去的字</span></li>
+          <li><span class="sw"><span class="ed">[la]</span></span><span>整理者补出的字或说明</span></li>
+          <li><span class="sw"><span class="pg">p. 2</span></span><span>原件换页处</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="index" aria-labelledby="idx-h">
+      <h2 id="idx-h">信件目录</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>序</th><th>信上日期</th><th>地点</th><th>收信人</th><th>档案文件名</th></tr></thead>
+          <tbody>
+<tr><td class="mono"><a href="#l1">1</a></td><td>1897 年 8 月 21 日</td><td><span lang="fr">Pau</span><br><span class="muted">波城</span></td><td>“可敬的神父”</td><td class="mono small">Lettre du 21 août 1897 _001 · _002-003 · _004</td></tr>
+<tr><td class="mono"><a href="#l2">2</a></td><td>1909 年 11 月 4 日</td><td><span lang="fr">Tsedjrong</span><br><span class="muted">茨中（推断）</span></td><td>一位老朋友（在马赛）</td><td class="mono small">Lettre du 4 novembre 1909 _001 · _002-003 · _004</td></tr>
+<tr><td class="mono"><a href="#l3">3</a></td><td>1910 年（未写月日）</td><td><span lang="fr">Tsekou</span><br><span class="muted">茨菇</span></td><td>约瑟夫·皮耶可敬神父（在巴西）</td><td class="mono small">Lettre de 1910 _001 · _002</td></tr>
+<tr><td class="mono"><a href="#l4">4</a></td><td>1910 年 7 月 5 日</td><td><span lang="fr">Tsekou</span><br><span class="muted">茨菇</span></td><td>表妹（修女，在里昂）</td><td class="mono small">Lettre du 3 août 1910 _001 · _002<br><span class="flag">文件名误作 3 août 1910</span><span class="flag">第 1 页右缘截损</span></td></tr>
+<tr><td class="mono"><a href="#l5">5</a></td><td>1910 年 9 月 10 日</td><td><span lang="fr">Tsekou</span><br><span class="muted">茨菇</span></td><td>外方传教会院长</td><td class="mono small">Lettre du 10 sept 1910 _001 · _002-003</td></tr>
+<tr><td class="mono"><a href="#l6">6</a></td><td>1910 年 12 月 6 日</td><td><span lang="fr">Tsekou</span><br><span class="muted">茨菇</span></td><td>表妹（修女）</td><td class="mono small">Lettre du 6 décembre 1910 _001 · _002<br><span class="flag">附言末行截损</span></td></tr>
+<tr><td class="mono"><a href="#l7">7</a></td><td>1912 年 3 月 27 日</td><td><span lang="fr">Tsedjrong</span><br><span class="muted">茨中（推断）</span></td><td>兄弟阿道夫</td><td class="mono small">Lettre du 27 mars 1912 _001 · _002<br><span class="flag">不完整：第 4 页之后缺失</span></td></tr>
+<tr><td class="mono"><a href="#l8">8</a></td><td>1912 年 6 月 5 日</td><td><span lang="fr">Tsekou</span><br><span class="muted">茨菇</span></td><td>兄弟阿道夫</td><td class="mono small">Lettre du 5 janvier 1912 _001 · _002<br><span class="flag">文件名误作 5 janvier 1912</span></td></tr>
+<tr><td class="mono"><a href="#l9">9</a></td><td>1912 年 8 月 5 日</td><td><span lang="fr">Siao-ouy-sy</span><br><span class="muted">小维西</span></td><td>父母（附埃米尔 8 月 9 日附言）</td><td class="mono small">Lettre du 3 août 1912 _001 · _002<br><span class="flag">文件名误作 3 août 1912</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap letters">
+
+<article class="letter" id="l1">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">1</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 1 封 · 原件 · 4 页</p>
+      <h2>1897 年 8 月 21 日</h2>
+      <p class="frdate" lang="fr">Pau, ce 21 août 1897</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Pau</span> · 波城</dd></div>
+        <div><dt>收信人</dt><dd>“可敬的神父”</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 21 août 1897 _001 · _002-003 · _004</dd></div>
+      </dl>
+      
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row motto"><div class="fr" lang="fr">✝ Laus Deo !</div><div class="zh" lang="zh-CN">✝ 赞美天主！（Laus Deo!）</div></div><div class="row"><div class="fr" lang="fr">Pau, ce 21 Août 1897</div><div class="zh" lang="zh-CN">波城，1897 年 8 月 21 日</div></div><div class="row"><div class="fr" lang="fr">Vénéré Père,</div><div class="zh" lang="zh-CN">可敬的神父：</div></div><div class="row"><div class="fr" lang="fr">Nous sommes en train à la caserne de préparer la place aux réservistes : c'est vous dire que nous n'allons avoir plus que 28 jours à faire. Le Seigneur soit loué !!</div><div class="zh" lang="zh-CN">我们正在兵营里为后备役军人腾地方：这就是说，我们只剩下 28 天的兵役了。赞美上主！！</div></div><div class="row"><div class="fr" lang="fr">Vous devez toucher vous aussi, mon Père, à la fin de vos vacances. Vous ne devez pas en ressentir la même joie <span class="pg">p. 2</span> que moi à propos de la « classe » ; cependant, comme moi, vous sentez le besoin de mener une vie un peu plus serrée<span class="unc" title="辨认不确定">?</span>, et j'ajouterai pour moi un peu plus cléricale. Je vous avoue que le désir <del>qu'en moi</del> que j'en éprouve est encore<span class="unc" title="辨认不确定">?</span> <del>plutôt</del> plus intense, et j'aspire avec impatience à me remettre sous le joug du Seigneur.</div><div class="zh" lang="zh-CN">神父，您的假期想必也快结束了。您对此大概不会 <span class="pg">第 2 页</span> 像我盼“退伍”<sup class="nref"><a href="#n1-1" id="r1-1">1</a></sup>那样高兴；不过，您也和我一样，感到需要过一种更严格<span class="unc" title="辨认不确定">?</span>的生活；就我而言，还要加一句：更像神职人员的生活。我向您承认，我对此的渴望 <del>在我心中</del> 更加强烈了，我迫不及待地想重新负起上主的轭。</div></div><div class="row"><div class="fr" lang="fr">Il y a quinze jours que je vis le Père Seguin<span class="unc" title="辨认不确定">?</span> à Lourdes, de même que cinq ou six aspirants venant de faire leurs vingt-huit jours. Je suis encore invité demain à y aller par M. J.<span class="unc" title="辨认不确定">?</span> Lemarle<span class="unc" title="辨认不确定">?</span>. Je n'ai pas de permission, mais je me débrouillerai je pense pour m'y trouver.</div><div class="zh" lang="zh-CN">两个星期前，我在卢尔德见到了塞甘<span class="unc" title="辨认不确定">?</span>神父，还有五六位刚服完二十八天后备役训练的修生。明天 J.<span class="unc" title="辨认不确定">?</span>勒马尔勒<span class="unc" title="辨认不确定">?</span>先生又邀我去那里。我没有请到假，但我想我会设法到场的。</div></div><div class="row"><div class="fr" lang="fr">Vous savez sans doute que M. le Supérieur m'a <span class="pg">p. 3</span> envoyé une lettre par laquelle il m'invite à <del>demander</del> lui envoyer mon certificat de conduite chrétienne pendant cette année. J'ai fait demander au Père Leussenteur <span class="ed">[= Lesserteur ?]</span> à qui je dois le demander, parce que le P. Jésuite qui s'occupe soit disant de nous, ne nous connaît guère, et puis il est absent de la résidence. J'espère avoir bientôt une réponse.</div><div class="zh" lang="zh-CN">您大概已经知道，院长先生 <span class="pg">第 3 页</span> 给我来信，要我 <del>去开</del> 把这一年的“基督徒操行证明”寄给他。我已托人去问勒瑟尔特<span class="unc" title="辨认不确定">?</span>神父<sup class="nref"><a href="#n1-2" id="r1-2">2</a></sup>，我该向谁去开这份证明，因为那位据说照管我们的耶稣会神父其实并不怎么认识我们，而且他现在也不在会院。希望很快能得到答复。</div></div><div class="row"><div class="fr" lang="fr">C'est le 2 septembre que nous partons en manœuvres ; c'est le dernier coup de collier. Avec la grâce de Dieu j'espère achever bravement mon service. Je me recommande à vos bonnes prières surtout pour ce temps-là ; parce <span class="ed">[que]</span> le contact plus immédiat du monde <del>me donne</del> m'oblige <span class="pg">p. 4</span> à me tenir plus que jamais sur mes gardes.</div><div class="zh" lang="zh-CN">我们 9 月 2 日出发去演习；这是最后一把劲了。靠天主的恩宠，我希望能勇敢地服完兵役。请在祈祷中记念我，尤其是那段时间；因为与世俗更直接的接触，<del>使我</del> 迫使我 <span class="pg">第 4 页</span> 比以往任何时候都更要提高警惕。</div></div><div class="row"><div class="fr" lang="fr">À la Grotte, s'il plaît à Dieu, j'aurai pour vous un souvenir spécial. Je vous laisse dans le Cœur Immaculé de Marie en qui je suis</div><div class="zh" lang="zh-CN">到了<span class="ed">〔卢尔德的〕</span>圣母山洞，若天主许可，我会特别为您祈祷。我把您托付于圣母无染原罪之心，在她心中，我永远是</div></div><div class="row"><div class="fr" lang="fr">Votre enfant affectueux</div><div class="zh" lang="zh-CN">您亲爱的孩子</div></div><div class="row"><div class="fr" lang="fr">Th. Monbeig<br>asp. m. <span class="ed">[= aspirant missionnaire]</span></div><div class="zh" lang="zh-CN">Th. 蒙贝格<br>传教修生</div></div>
+  </div>
+  <aside class="notes"><h3>译注</h3><ol><li id="n1-1"><span class="nnum">1</span><span>原文 « la classe »，法国军中俚语，指本届应征兵服役期满退伍。</span> <a class="back" href="#r1-1" aria-label="返回正文">↩</a></li><li id="n1-2"><span class="nnum">2</span><span>原文字形近 “Leussenteur”，可能指外方传教会的 Lesserteur 神父。</span> <a class="back" href="#r1-2" aria-label="返回正文">↩</a></li></ol></aside>
+</article>
+
+<article class="letter" id="l2">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">2</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 2 封 · 原件 · 方格纸 · 4 页</p>
+      <h2>1909 年 11 月 4 日</h2>
+      <p class="frdate" lang="fr">Tsedjrong, le 4 novembre 09</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Tsedjrong</span> · 茨中（推断）</dd></div>
+        <div><dt>收信人</dt><dd>一位老朋友（在马赛）</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 4 novembre 1909 _001 · _002-003 · _004</dd></div>
+      </dl>
+      
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row motto"><div class="fr" lang="fr">✝ Dieu et les âmes !</div><div class="zh" lang="zh-CN">✝ 天主与灵魂！</div></div><div class="row"><div class="fr" lang="fr">Tsedjrong, le 4 novembre 09</div><div class="zh" lang="zh-CN">Tsedjrong，<sup class="nref"><a href="#n2-19" id="r2-19">19</a></sup>09 年 11 月 4 日</div></div><div class="row"><div class="fr" lang="fr">Bien cher ami,</div><div class="zh" lang="zh-CN">非常亲爱的朋友：</div></div><div class="row"><div class="fr" lang="fr">Il y a q.q. jours que j'ai reçu ta lettre de Juillet dernier, et j'aurais voulu y répondre tout de suite. Mais, mon cher, tu l'as deviné ; je suis accablé de besogne comme toi, et puis voilà les solennités de la Toussaint… Bref entre nous, pas d'excuses à fournir ni toi ni moi ; pourquoi se le dire toujours qu'on est uni de cœur ; qu'on travaille dur en attendant l'éternité. Cela est dit une fois pour toutes ; le reste vient quand on en a le temps.</div><div class="zh" lang="zh-CN">几天前我收到了你七月的来信，本想立刻回复。可是，老兄，你也猜到了：我和你一样忙得不可开交，接着又是诸圣节的庆典……总之，你我之间，谁都不必找借口；何必老是把“我们心心相连”“我们一面苦干，一面等候永恒”挂在嘴边呢？这话说一次就够了，其余的，有空再谈。</div></div><div class="row"><div class="fr" lang="fr">Oui j'ai su vos désastres de Provence, l'horrible tremblement de terre, la main de Dieu menaçant notre belle France si elle ne s'amende. Qu'elle le comprenne et qu'elle revienne au Dieu qui lui envoya Jeanne la Pucelle, la Bienheureuse !</div><div class="zh" lang="zh-CN">是的，我听说了你们普罗旺斯的灾难，那场可怕的地震<sup class="nref"><a href="#n2-1" id="r2-1">1</a></sup>：这是天主之手在警告我们美丽的法国，若她再不悔改……愿她明白这一点，回到那位曾派遣贞德——那位真福者<sup class="nref"><a href="#n2-2" id="r2-2">2</a></sup>——给她的天主那里！</div></div><div class="row"><div class="fr" lang="fr">Ici souvent on ressent q.q. secousses <span class="pg">p. 2</span> heureusement sans accident. Il y a une 30ne d'années une ville thibétaine fut cependant rasée en une seconde. Les lamas (?) <span class="ed">[le « (?) » est dans l'original]</span> avaient prédit la chose, et ordonnèrent des danses publiques pour conjurer le sort. Mais rien n'y fit ; au milieu de ces danses infernales dans la lamaserie même tout s'écroula. Je note soigneusement toutes les secousses que je perçois, et tous les ans j'en envoie la copie à l'observatoire des Jésuites à Changhai.</div><div class="zh" lang="zh-CN">这里也常有一些震动，<span class="pg">第 2 页</span> 幸好都没有出事。不过，大约三十年前，有一座藏区城镇曾在一瞬间被夷为平地。喇嘛们（?）<sup class="nref"><a href="#n2-3" id="r2-3">3</a></sup>事先预言了这场灾祸，下令举行公开的跳神来禳解。但毫无用处：就在喇嘛寺里，在这些地狱般的舞蹈中间，一切都塌了。我把自己感觉到的每一次震动都仔细记下来，每年把抄本寄给上海的耶稣会天文台<sup class="nref"><a href="#n2-4" id="r2-4">4</a></sup>。</div></div><div class="row"><div class="fr" lang="fr">Tu me complimentes sur mon harmonium et me consoles sur sa base<span class="unc" title="辨认不确定">?</span> perdue. Merci. La base<span class="unc" title="辨认不确定">?</span> sera renouvelée. On m'avait assuré que cet instrument transportable ne coûterait que 100 f. et voilà la note qui se porte à 390. C'est une jolie blague n'est-ce pas. Enfin avalons celle-là et <del>te</del> nous tâcherons de faire de la musique pour notre argent.</div><div class="zh" lang="zh-CN">你夸我的风琴，又为它丢了底座<span class="unc" title="辨认不确定">?</span>安慰我。谢谢。底座会重新配一个。人家曾向我保证，这件便携乐器只要 100 法郎，结果账单涨到了 390 法郎。真是个好玩笑，不是吗？算了，这口气咽下去吧，我们尽量让这笔钱奏出点音乐来。</div></div><div class="row"><div class="fr" lang="fr">Sais-tu que j'ai reçu enfin ta boîte de dominos et le jeu de palets il y a 4 mois. Tu vois qu'il en faut de la patience. Merci donc pour m'avoir satisfait pour cette fantaisie. On pensera à toi en jouant.</div><div class="zh" lang="zh-CN">你知道吗，四个月前我终于收到了你寄来的那盒多米诺骨牌和那副掷饼游戏。你看，这得多有耐心。谢谢你满足了我这个心血来潮的念头。我们玩的时候会想起你。</div></div><div class="row"><div class="fr" lang="fr"><span class="pg">p. 3</span> Donc notre brave Joseph Pie est maître de chapelle à Perpignan. Puisque tu es en relation avec lui <del>offre</del> rappelle-lui d'abord mon souvenir qui ne m'a jamais quitté. Tu me diras ensuite son odyssée depuis 10 ans. Tu me dis qu'il revient d'Afrique. Savais-je qu'il y était seulement ! La dernière fois que je lui écrivis c'était en Hollande si je ne me trompe.</div><div class="zh" lang="zh-CN"><span class="pg">第 3 页</span> 这么说，我们的好约瑟夫·皮耶如今在佩皮尼昂当圣乐指挥了。既然你和他有联系，先请 <del>转达</del> 代我向他问候，我从来没有忘记他。然后再告诉我他这十年的漂泊经历。你说他刚从非洲回来——我连他去过那里都不知道！如果我没记错，我最后一次给他写信时，他还在荷兰。</div></div><div class="row"><div class="fr" lang="fr">Mon vieux, quoique tu en dises, garde-toi bien de passer mes lettres à d'autres ; elles ne sont pas pour être lues ailleurs. Le ton est trop familier ; la forme, trop peu soignée. Bref, j'écris toujours sur mes genoux par habitude quoique maintenant j'ai une belle maison et une table.</div><div class="zh" lang="zh-CN">老兄，不管你怎么说，千万别把我的信给别人看；这些信不是给外人读的。语气太随便，文字也太粗糙。说到底，我一直习惯在膝盖上写信，尽管现在已经有了一座漂亮的房子和一张桌子。</div></div><div class="row"><div class="fr" lang="fr">Je ne manque pas de prier pour toi, pour tes Parents, pour le succès de ton œuvre.</div><div class="zh" lang="zh-CN">我从没有忘记为你、为你的父母、为你的事业成功祈祷。</div></div><div class="row"><div class="fr" lang="fr">Mais à propos, vous êtes bons, vous Marseillais, de vous laisser voler votre cardinal. Est-ce que ces Bordelais ne pouvaient pas s'en procurer un autre ailleurs ?</div><div class="zh" lang="zh-CN">话说回来，你们马赛人真好说话，竟让人把你们的枢机主教偷走了<sup class="nref"><a href="#n2-5" id="r2-5">5</a></sup>。那些波尔多人难道不能到别处另找一位吗？</div></div><div class="row"><div class="fr" lang="fr"><span class="pg">p. 4</span> Je veux bien que votre nouveau Pasteur, Mgr Fabre, je crois, soit un digne homme de Dieu. Mais enfin : <em>melior est conditio possidentis</em>, disait<span class="unc" title="辨认不确定">?</span> autrefois le P. Barillon.</div><div class="zh" lang="zh-CN"><span class="pg">第 4 页</span> 我当然愿意相信，你们的新牧者——我想是法布尔主教——是一位可敬的天主之人。可说到底，正如从前巴里永神父常说的：melior est conditio possidentis（拉丁法谚：“占有者处于更有利的地位”）。</div></div><div class="row"><div class="fr" lang="fr">Inutile de te demander de prier pour moi et mes chers Thibétains ; pour te prouver qu'on ne m'a pas changé je t'envoie de ma personne une pâle photographie prise par un confrère amateur avec un vieil instrument laissé ici par un explorateur.</div><div class="zh" lang="zh-CN">不必再请你为我和我亲爱的藏民祈祷了；为了向你证明我一点没变，随信寄上一张我本人的模糊照片，是一位业余爱好摄影的同会兄弟用一位探险家留在这里的旧相机拍的。</div></div><div class="row"><div class="fr" lang="fr">Ton frère en N.-S.</div><div class="zh" lang="zh-CN">你在吾主内的兄弟</div></div><div class="row"><div class="fr" lang="fr">Théodore</div><div class="zh" lang="zh-CN">泰奥多尔</div></div>
+  </div>
+  <aside class="notes"><h3>译注</h3><ol><li id="n2-1"><span class="nnum">1</span><span>指 1909 年 6 月 11 日普罗旺斯朗贝斯克（Lambesc）地震。</span> <a class="back" href="#r2-1" aria-label="返回正文">↩</a></li><li id="n2-2"><span class="nnum">2</span><span>贞德于 1909 年 4 月被宣布为真福。</span> <a class="back" href="#r2-2" aria-label="返回正文">↩</a></li><li id="n2-3"><span class="nnum">3</span><span>“(?)”为原信作者本人所加。</span> <a class="back" href="#r2-3" aria-label="返回正文">↩</a></li><li id="n2-4"><span class="nnum">4</span><span>即徐家汇天文台。</span> <a class="back" href="#r2-4" aria-label="返回正文">↩</a></li><li id="n2-5"><span class="nnum">5</span><span>指马赛主教安德里厄（Andrieu）枢机于 1909 年调任波尔多总主教。</span> <a class="back" href="#r2-5" aria-label="返回正文">↩</a></li></ol></aside>
+</article>
+
+<article class="letter" id="l3">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">3</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 3 封 · 原件 · 方格纸 · 2 页</p>
+      <h2>1910 年（未写月日）</h2>
+      <p class="frdate" lang="fr">Tsekou, mission du Thibet 1910</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Tsekou</span> · 茨菇</dd></div>
+        <div><dt>收信人</dt><dd>约瑟夫·皮耶可敬神父（在巴西）</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre de 1910 _001 · _002</dd></div>
+      </dl>
+      
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row"><div class="fr" lang="fr">Au R. P. Joseph Pie.</div><div class="zh" lang="zh-CN">致约瑟夫·皮耶可敬神父</div></div><div class="row"><div class="fr" lang="fr">Tsekou, mission du Thibet 1910</div><div class="zh" lang="zh-CN">茨菇，西藏传教区，1910 年</div></div><div class="row"><div class="fr" lang="fr">De temps en temps il est doux de se saluer dans le Seigneur quoique nous soyons aux antipodes, vous au Brésil et moi au Thibet.</div><div class="zh" lang="zh-CN">我们虽然远在地球两端，您在巴西，我在西藏，可不时在主内互致问候，仍是一件甜美的事。</div></div><div class="row"><div class="fr" lang="fr">Notre ami commun, Edmond, m'a dit dernièrement que vous étiez au Brésil, exerçant le saint ministère dans les pampas sans doute. Là votre champ d'action doit être immense et les ouvriers doivent être peu nombreux. J'ai ouï dire que dans ce pays où cependant les gens sont tous catholiques, le clergé indigène se recrute difficilement. Enfin vous travaillez là où le bon Dieu vous a conduit, je l'en remercie de tout cœur. Rendez-moi le même service, s.v.p. et demandez au Seigneur qu'il me rende de plus en plus apte à son service et au salut des âmes.</div><div class="zh" lang="zh-CN">我们共同的朋友埃德蒙不久前告诉我，您在巴西从事神圣的牧职，想必是在潘帕斯草原上。在那里，您的工作范围一定广阔无边，而工人一定很少。我听说那个国家的人虽然全都信天主教，本地神职人员却很难招募。总之，您在仁慈的天主引领您去的地方工作，我衷心为此感谢祂。也请您为我做同样的事：求上主使我越来越适合为祂服务、拯救灵魂。</div></div><div class="row"><div class="fr" lang="fr">Je n'ai jamais quitté mon premier poste de Tsekou. J'avais autrefois un excellent curé dans la personne du P. Dubernard qui mourut martyr en 1905. Pour moi j'en échappai et lui ai succédé dans son poste. Je l'ai reconstruit ; actuellement la principale église est sur le point de se terminer ; dans deux mois j'espère la bénir solennellement.</div><div class="zh" lang="zh-CN">我从未离开过我的第一个岗位茨菇。从前我有一位极好的本堂神父，就是杜贝尔纳神父（Dubernard，中文文献作余伯南），他于 1905 年殉道。我自己逃了出来，接替了他的职位。我把这里重建了起来；如今主堂即将完工，我希望两个月后为它隆重祝圣。</div></div><div class="row"><div class="fr" lang="fr">Mon petit troupeau n'augmente guère. Chaque année j'ai de 20 à 30 baptêmes de nouveaux chrétiens. En ce moment j'en instruis une trentaine. Puissé-je bien leur faire connaître Dieu et le leur faire aimer ! Pour cela il me semble que je ne <span class="pg">p. 2</span> ménage pas ma peine. Mais que de fois le cœur est éloigné de Dieu. Ah ! pauvre de moi ! quand est-ce que finirai <span class="ed">[sic]</span> à être tout entier à Lui ! Aidez-moi, mon cher ami, auprès de votre Patron, afin d'apprendre de lui à bien traiter le Petit !</div><div class="zh" lang="zh-CN">我的小羊群几乎没有增加。每年有二三十个新教友受洗。眼下我正在给三十来人讲道理。愿我能好好地让他们认识天主、爱慕天主！为此，我觉得自己 <span class="pg">第 2 页</span> 并没有吝惜气力。可是，我的心又有多少次远离天主啊。唉！可怜的我！什么时候我才能完完全全属于祂！亲爱的朋友，请在您的主保<span class="ed">〔圣若瑟〕</span>面前帮助我，好让我向他学习如何好好对待圣婴！</div></div><div class="row"><div class="fr" lang="fr">Je ne sais si vous pourrez me donner de vos nouvelles ; elles seraient les bienvenues. En tous les cas, je ne vous oublie pas, mon cher Joseph, dans mes faibles prières. Votre souvenir m'est un secours et un réconfort dans les moments difficiles.</div><div class="zh" lang="zh-CN">不知您能否给我寄来您的消息；那会是非常受欢迎的。无论如何，亲爱的约瑟夫，我在微薄的祈祷中从未忘记您。想起您，在困难的时刻对我就是一种帮助和慰藉。</div></div><div class="row"><div class="fr" lang="fr">Travaillons raide tant<span class="unc" title="辨认不确定">?</span> que le bon Dieu le voudra ; quand il sonnera le ralliement, soyons prêts à répondre à son appel, et là-haut on se contera les misères passées. Combien elles seront douces alors !!!</div><div class="zh" lang="zh-CN">只要仁慈的天主愿意，我们就拼命干吧；当祂吹响集合号时，我们要随时准备回应祂的召唤，到了天上，再彼此讲述过去的苦难。那时它们将是多么甜蜜啊！！！</div></div><div class="row"><div class="fr" lang="fr">A Dieu et priez pour votre</div><div class="zh" lang="zh-CN">再会了（愿在天主内），请为您的</div></div><div class="row"><div class="fr" lang="fr">Théodore, mi. apost. du Thibet</div><div class="zh" lang="zh-CN">泰奥多尔，西藏宗座传教士　祈祷</div></div>
+  </div>
+  
+</article>
+
+<article class="letter" id="l4">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">4</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 4 封 · 复印件 · 4 页</p>
+      <h2>1910 年 7 月 5 日</h2>
+      <p class="frdate" lang="fr">Tsekou, le 5 juillet 1910</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Tsekou</span> · 茨菇</dd></div>
+        <div><dt>收信人</dt><dd>表妹（修女，在里昂）</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 3 août 1910 _001 · _002</dd></div>
+      </dl>
+      <div class="flags"><span class="flag">文件名误作 3 août 1910</span><span class="flag">第 1 页右缘截损</span></div>
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row ednote"><div class="fr" lang="fr">Photocopie ; la marge droite de la page 1 est coupée : les fins de ligne sont restituées entre crochets.</div><div class="zh" lang="zh-CN">复印件；第 1 页右缘在复印时被截掉，行末缺字由译者按上下文补出。</div></div><div class="row motto"><div class="fr" lang="fr">✝ Dieu et les âmes !</div><div class="zh" lang="zh-CN">✝ 天主与灵魂！</div></div><div class="row"><div class="fr" lang="fr">Tsekou, le 5 juillet 1910</div><div class="zh" lang="zh-CN">茨菇，1910 年 7 月 5 日</div></div><div class="row"><div class="fr" lang="fr">Bien chère Sœur en Jésus !</div><div class="zh" lang="zh-CN">在耶稣内亲爱的姊妹：</div></div><div class="row"><div class="fr" lang="fr">Hier je recevais ta bonne lettre du mois d<span class="ed">[e]</span> décembre dernier. Quoique pas fraîches du tout, tes nouvel<span class="ed">[les]</span> m'ont fait un immense plaisir. Que le Seigneur so<span class="ed">[it]</span> loué à jamais de t'avoir menée toujours comme par <span class="ed">[la]</span> main dans son saint service ! Combien, ma c<span class="ed">[hère]</span> cousine, ou plutôt, ma chère Sœur, tu ramass<span class="ed">[es]</span> de trésors pour le ciel ! Car enfin il n'y a que cela d<span class="ed">[e]</span> vrai sur cette terre : travailler et semer pour le c<span class="ed">[iel]</span>. Là-haut comme on se reposera auprès de Dieu et d<span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span> Dieu ! aux pieds de la Vierge Immaculée dont nou<span class="ed">[s]</span> ne voyons actuellement que les traces dans ses beau<span class="ed">[x]</span> sanctuaires de Lourdes et de Fourvière.</div><div class="zh" lang="zh-CN">昨天我收到了你去年十二月那封好信。你的消息虽然一点也不新鲜了，还是让我非常高兴。愿上主永远受赞美，因为祂一直像牵着你的手一样，引领你在祂神圣的事业中服务！我亲爱的表妹，或者更该说，我亲爱的修女，你为天堂积攒了多少财宝啊！因为说到底，世上真实的只有这一件事：为天堂劳作、为天堂播种。到了天上，我们将在天主身边、在<span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span>天主身边安息，在无染原罪圣母的脚前安息，那该多好！此刻我们只能在卢尔德和富维耶<sup class="nref"><a href="#n4-1" id="r4-1">1</a></sup>那些美丽的圣所里看到她的踪迹。</div></div><div class="row"><div class="fr" lang="fr">Comme on sera heureux de se revoi<span class="ed">[r]</span> alors, chacun comptant les croix de la terre qui <span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span> seront converties en fleurs du ciel ! Te souvien<span class="ed">[s-tu]</span> d'autrefois, de ces réunions de famille soit chez To<span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span> soit à Andrein<span class="unc" title="辨认不确定">?</span> à Léa<span class="unc" title="辨认不确定">?</span>. On se voyait avec plai<span class="ed">[sir]</span>, on se contait ses travaux, ses peines et ses joies, et le lendemain on était plus fort pour travailler jusqu'à la prochaine visite. Eh ! bien je me figure <span class="pg">p. 2</span> que la grande famille du ciel se réjouira comme cela, et combien plus encore.</div><div class="zh" lang="zh-CN">到那时重逢，每个人数着世上的十字架，而这些十字架都已化作天上的花朵，那该多幸福啊！你还记得从前吗？那些家庭聚会，或在 To<span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span>家，或在安德兰<span class="unc" title="辨认不确定">?</span><sup class="nref"><a href="#n4-2" id="r4-2">2</a></sup>莱亚<span class="unc" title="辨认不确定">?</span>那里。大家高高兴兴地见面，互相讲述各自的劳作、辛苦和欢乐，第二天便更有力气去干活，直到下一次相聚。好啦，我想象 <span class="pg">第 2 页</span> 天上的大家庭也会这样欢聚，而且欢乐得多。</div></div><div class="row"><div class="fr" lang="fr">Moi je sèmerai mes os dans un sillon du Thibet afin de lui faire produire q.q. chose en plus, toi, ma chère Sœur, où la Providence et l'obéissance te dira de mourir. Il ne s'en perdra pas un seul, nous les retrouverons tous le grand jour de la revue des hommes de cette terre pour aller au séjour de la gloire. Toi tu auras une casserole d'or et de pierreries à la boutonnière, moi j'aurai q.q. bonzes et lamas comme trophée ; et nous irons, grâce à Notre Sauveur, occuper la place qu'il nous a préparée.</div><div class="zh" lang="zh-CN">我呢，要把我的骨头播在西藏的犁沟里，好让这片土地多结些果实；而你，我亲爱的修女，将死在天主上智和服从吩咐你去的地方。这些骨头一根也不会丢失，在审判世人的那个伟大日子，我们会把它们全部找回，然后进入荣耀的居所。你会在扣眼上别着一只镶满宝石的金锅<sup class="nref"><a href="#n4-3" id="r4-3">3</a></sup>，我则会带着几个和尚和喇嘛作为战利品；靠着我们救主的恩宠，我们将去占据祂为我们预备的位置。</div></div><div class="row"><div class="fr" lang="fr">Pour le moment il n'y <span class="ed">[a]</span> pas de persécution ici ; depuis 1906 nous avons la paix. Nous travaillons à relever nos ruines. J'ai déjà construit une chapelle ; la plus grande se construit en ce moment. Le travail des conversions quoique lent va quand même son train. L'an passé j'ai baptisé 33 adultes, et mes chrétiens sont au nombre de 500 éparpillés dans 5 à 6 villages ; ce qui donne pas mal de travail pour les visiter. La santé est toujours bonne grâce à Dieu.</div><div class="zh" lang="zh-CN">目前这里没有教难；自 1906 年起我们一直平安无事。我们正在重建废墟。我已经盖好了一座小堂；更大的一座正在施工。归化的工作虽然缓慢，却仍在推进。去年我为 33 名成人付了洗，我的教友现有 500 人，分散在五六个村子里；光是去探访他们，工作就已经不少了。感谢天主，我身体一直很好。</div></div><div class="row"><div class="fr" lang="fr">Pour toi tu es toujours sur les fourneaux. Évidemment que le ciel de Lyon n'est pas aussi <span class="pg">p. 3</span> beau que celui de Pau ; et souvent les brouillards du Rhône et de la Saône empêchent de voir briller le soleil. Faisons en sorte que le soleil de notre âme ne se ternisse<span class="unc" title="辨认不确定">?</span> jamais. Soyons toujours contents du sort de la Providence ; quand la tristesse vient mettons-la à la porte ; si le cœur gémit trop, prenons-le à deux mains, et forçons-le à crier : Seigneur que votre volonté soit faite et non la mienne !</div><div class="zh" lang="zh-CN">至于你，你还是天天守着炉灶。里昂的天空当然不如 <span class="pg">第 3 页</span> 波城的天空那么美；罗讷河和索恩河上的雾常常遮住阳光。让我们努力，使我们灵魂中的太阳永不黯淡<span class="unc" title="辨认不确定">?</span>。让我们永远满足于天主上智所安排的命运；悲伤来了，就把它请出门外；心若叹息得太厉害，就用两手把它捧住，逼它喊出：“主啊，愿祢的旨意承行，而不是我的！”</div></div><div class="row"><div class="fr" lang="fr">Je n'oublierai jamais ni ton père ni ta mère ni ta famille. Je suis prêtre, et c'est pourquoi je dois prier spécialement pour mes proches. Je me souviendrai toujours de la visite de ta chère mère à la rue du Bac, de notre prière dans la Salle des Martyrs, au milieu des chaînes et des cangues que nos aînés ont portées pour l'amour de Jésus. Dernièrement écrivant à ma sœur Marie, je la chargeais de vouloir bien me rappeler à son souvenir. À ton tour, quand tu écriras chez toi, n'oublie pas de dire à ta mère que je prie toujours pour elle, et pour les siens, <del>ton</del> Joseph, le chef maintenant de la famille et pour le petit (oh ! il doit être grand !) le petit Aristide que j'aurais voulu tant voir prêtre !</div><div class="zh" lang="zh-CN">我永远不会忘记你的父亲、你的母亲和你的家人。我是神父，所以应当特别为我的亲人祈祷。我将永远记得你亲爱的母亲到巴克街<sup class="nref"><a href="#n4-4" id="r4-4">4</a></sup>来看我，记得我们一起在“殉道者纪念厅”里祈祷，四周是我们的前辈为爱耶稣而戴过的锁链和木枷。前些日子我给我妹妹<span class="ed">〔或姐姐〕</span>玛丽写信，托她代我向你母亲问候。轮到你了：给家里写信时，别忘了告诉你母亲，我一直在为她、为她的家人祈祷：为约瑟夫，如今他是一家之主了；为那个小家伙（哦！他现在一定长大了！），小阿里斯蒂德，我多么希望看到他成为神父啊！</div></div><div class="row"><div class="fr" lang="fr"><span class="pg">p. 4</span> Émile est mon plus proche voisin ; nous n'avons que 2 journées et demi de route à faire pour nous voir. Il y a un mois il a passé ici q.q. jours. Il est un peu photographe ; il fit mon portrait qui te donnera une idée de ma personne de 35 ans. Ce portrait ne sort pas de artiste de grand talent ; mais pour ce pays-ci c'est déjà bien.</div><div class="zh" lang="zh-CN"><span class="pg">第 4 页</span> 埃米尔是我最近的邻居；我们相见只需要走两天半的路。一个月前他来这里住了几天。他会一点摄影，给我拍了一张照片，可以让你知道我 35 岁时的模样。这张照片不是什么大艺术家拍的，但在这个地方，已经算不错了。</div></div><div class="row"><div class="fr" lang="fr">Je ne connais pas Fourvière où l'on aime tant la Ste Vierge, mais je connais Celle-ci. Aussi à ta prochaine visite présente-lui mes hommages et mes besoins. Elle les sait, et voudra bien m'exaucer si tu le lui demandes.</div><div class="zh" lang="zh-CN">我不认识那座人们如此敬爱圣母的富维耶大殿，但我认识这位圣母。所以，你下次去朝圣时，请替我向她致敬，并向她陈明我的需要。她都知道，只要你替我求，她一定会应允我。</div></div><div class="row"><div class="fr" lang="fr">Merci pour l'envoi que tu nous fais de q.q. médailles et chapelets ; nos Thibétains en sont toujours très friands ; remercie pour moi les personnes de ton entourage qui ont pensé à nous.</div><div class="zh" lang="zh-CN">谢谢你给我们寄来的几枚圣牌和念珠；我们的藏族教友一向很喜欢这些东西；请替我感谢你身边那些惦记我们的人。</div></div><div class="row"><div class="fr" lang="fr">Je termine en te bénissant dans le Sacré Cœur de Jésus en qui je suis</div><div class="zh" lang="zh-CN">我在耶稣圣心内祝福你，就此搁笔。在圣心内，我永远是</div></div><div class="row"><div class="fr" lang="fr">Ton tout affectionné</div><div class="zh" lang="zh-CN">你最亲爱的</div></div><div class="row"><div class="fr" lang="fr">Th. Monbeig</div><div class="zh" lang="zh-CN">Th. 蒙贝格</div></div><div class="row"><div class="fr" lang="fr">à Oui-sy, via Bhamo-Taly, Birmanie.</div><div class="zh" lang="zh-CN"><span class="ed">〔回信地址〕</span>维西，经八莫—大理，缅甸。</div></div><div class="row marg"><div class="fr" lang="fr"><span class="ed">[En marge gauche, à la verticale :]</span> Cette adresse-là est la plus courte et la plus sûre ; ta lettre a mis presque 7 mois ; tu verras le temps que mettra la mienne par cette voie.</div><div class="zh" lang="zh-CN"><span class="ed">〔左侧页边竖写：〕</span>这个地址最近也最可靠；你的信走了将近 7 个月；看看我这封信走这条路要多久。</div></div>
+  </div>
+  <aside class="notes"><h3>译注</h3><ol><li id="n4-1"><span class="nnum">1</span><span>Fourvière，里昂城中山丘上的富维耶圣母大殿。</span> <a class="back" href="#r4-1" aria-label="返回正文">↩</a></li><li id="n4-2"><span class="nnum">2</span><span>原文 “Andrien/Andrein”，可能指萨利德贝阿恩附近的安德兰（Andrein）村；“Léa” 是地名还是人名不确定。</span> <a class="back" href="#r4-2" aria-label="返回正文">↩</a></li><li id="n4-3"><span class="nnum">3</span><span>玩笑话：表妹在修会里负责厨房（“守着炉灶”），所以说她将来的荣冠是一只“金锅”。</span> <a class="back" href="#r4-3" aria-label="返回正文">↩</a></li><li id="n4-4"><span class="nnum">4</span><span>rue du Bac：巴黎巴克街，外方传教会总部所在地，“殉道者纪念厅”即在其中；仁爱会修女的母院也在这条街上。</span> <a class="back" href="#r4-4" aria-label="返回正文">↩</a></li></ol></aside>
+</article>
+
+<article class="letter" id="l5">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">5</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 5 封 · 原件 · 方格纸 · 3 页</p>
+      <h2>1910 年 9 月 10 日</h2>
+      <p class="frdate" lang="fr">Tsekou, le 10 sept. 1910</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Tsekou</span> · 茨菇</dd></div>
+        <div><dt>收信人</dt><dd>外方传教会院长</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 10 sept 1910 _001 · _002-003</dd></div>
+      </dl>
+      
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row ednote"><div class="fr" lang="fr"><span class="ed">[Au crayon rouge, en haut à gauche : « 9.12 », annotation de réception probable.]</span></div><div class="zh" lang="zh-CN"><span class="ed">〔左上角有红笔“9.12”，可能是收信登记。〕</span></div></div><div class="row"><div class="fr" lang="fr">✝</div><div class="zh" lang="zh-CN">✝</div></div><div class="row"><div class="fr" lang="fr">Tsekou, le 10 sept. 1910</div><div class="zh" lang="zh-CN">茨菇，1910 年 9 月 10 日</div></div><div class="row"><div class="fr" lang="fr">Vénéré Père Supérieur,</div><div class="zh" lang="zh-CN">可敬的院长神父：</div></div><div class="row"><div class="fr" lang="fr">À la date du mois de Juin Mme Oberthür m'écrit qu'elle a remis entre vos mains q.q. ostensoirs. Elle m'autorise en même temps à vous en demander un.</div><div class="zh" lang="zh-CN">奥贝蒂尔夫人（Mme Oberthür）六月来信告诉我，她已把几座圣体光座交到您手中，同时允许我向您要一座。</div></div><div class="row"><div class="fr" lang="fr">Je vous serais donc reconnaissant, M. le Supérieur, de vouloir en confier un pour moi au procureur des commissions qui me le fera parvenir par la prochaine occasion.</div><div class="zh" lang="zh-CN">因此，院长先生，若蒙您将其中一座托交负责代购转运的司库神父，由他在下次有便时寄给我，我将不胜感激。</div></div><div class="row"><div class="fr" lang="fr"><span class="pg">p. 2</span> Depuis nos désastres de 1905, nous travaillons de toutes nos forces à relever nos ruines. Les conversions, quoique pas en masse, sont sensiblement plus nombreuses qu'avant la persécution. Que le bon Dieu nous donne de bons et nombreux ouvriers apostoliques, et la moisson se lèvera superbe.</div><div class="zh" lang="zh-CN"><span class="pg">第 2 页</span> 自 1905 年遭难以来，我们一直竭尽全力重建废墟。归化的人虽然不是成批而来，但已明显比教难之前多。愿仁慈的天主赐给我们众多优秀的使徒工人，那么庄稼必将长得茂盛。</div></div><div class="row"><div class="fr" lang="fr">C'est dans ce but que j'unis mes faibles prières à celles de tous les membres de notre société, et prie le Seigneur qu'il vous conserve longtemps à notre <span class="pg">p. 3</span> vénération et à l'œuvre si importante de notre séminaire.</div><div class="zh" lang="zh-CN">正是为此，我把我微薄的祈祷与本会全体会士的祈祷合在一起，求上主让您长久留在我们中间，受我们敬重，并继续主持我们修院这项如此重要的事业。</div></div><div class="row"><div class="fr" lang="fr">Veuillez agréer, M. le Supérieur, l'hommage de mes sentiments respectueux et reconnaissants.</div><div class="zh" lang="zh-CN">院长先生，请接受我恭敬与感激之情。</div></div><div class="row"><div class="fr" lang="fr">Th. Monbeig<br>mi. apost. Thibet</div><div class="zh" lang="zh-CN">Th. 蒙贝格<br>西藏宗座传教士</div></div>
+  </div>
+  
+</article>
+
+<article class="letter" id="l6">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">6</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 6 封 · 复印件 · 4 页</p>
+      <h2>1910 年 12 月 6 日</h2>
+      <p class="frdate" lang="fr">Tsekou, le 6 décembre 10</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Tsekou</span> · 茨菇</dd></div>
+        <div><dt>收信人</dt><dd>表妹（修女）</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 6 décembre 1910 _001 · _002</dd></div>
+      </dl>
+      <div class="flags"><span class="flag">附言末行截损</span></div>
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row ednote"><div class="fr" lang="fr">Photocopie.</div><div class="zh" lang="zh-CN">复印件。</div></div><div class="row motto"><div class="fr" lang="fr">Dieu et les âmes.</div><div class="zh" lang="zh-CN">天主与灵魂。</div></div><div class="row"><div class="fr" lang="fr">Tsekou, le 6 décembre 10.</div><div class="zh" lang="zh-CN">茨菇，<sup class="nref"><a href="#n6-19" id="r6-19">19</a></sup>10 年 12 月 6 日</div></div><div class="row"><div class="fr" lang="fr">Bien chère Sœur en Jésus !</div><div class="zh" lang="zh-CN">在耶稣内亲爱的姊妹：</div></div><div class="row"><div class="fr" lang="fr">Le bon Dieu a exaucé tes désirs et les nôtres. Ton colis nous est arrivé en très bon état il y a 20 jours ; ta lettre d'oct. dernier est ici depuis 10 jours. Donc tout est arrivé à bon port, et nous avons pu goûter tes pastilles. Envoyez des pastilles au Thibet ! J'avais d'abord envie de me fâcher ; puis j'ai réfléchi qu'à q.q. chose malheur est bon, <del>et</del> car la boîte qui les contient est excellente pour renfermer les hosties pour la Ste Messe.</div><div class="zh" lang="zh-CN">仁慈的天主满足了你的心愿，也满足了我们的心愿。你的包裹二十天前完好无损地寄到了；你十月的信也已到了十天。所以东西全都平安到达，我们也尝到了你寄的润喉糖。往西藏寄润喉糖！我起初真想生气；后来一想，坏事里总有好的一面，<del>而</del> 因为装糖的那只盒子正好用来存放弥撒用的祭饼。</div></div><div class="row"><div class="fr" lang="fr">Ne crains donc pas, chère cousine ; je te remercie infiniment pour tes médailles, chapelets, images, et surtout pour les bonbons. Avec la lettre j'ai eu le plaisir de voir ta photographie. Ta figure me semble n'avoir guère changé depuis la rue du Bac ; tu es un peu plus forte ; ça c'est la faute aux années ; à part cela, je ne m'y <span class="pg">p. 2</span> tromperais pas si je te voyais gravir la colline pour aller à Fourvière.</div><div class="zh" lang="zh-CN">所以别担心，亲爱的表妹；万分感谢你寄来的圣牌、念珠、圣像，尤其是那些糖果。随信我还高兴地看到了你的照片。你的样子跟在巴克街时比几乎没变；只是胖了一点，那是岁月的错；除此之外，<span class="pg">第 2 页</span> 要是看见你爬山去富维耶，我一定不会认错人。</div></div><div class="row"><div class="fr" lang="fr">Avec quel bonheur j'ai déjà donné de tes médailles à de nouveaux petits baptisés ; avec quelle joie j'arrache aux petits païens qui abandonnent les idoles, je leur arrache, dis-je, les amulettes de Satan pendues à leur cou, et les remplace par une jolie médaille et un cordon bleu ou rouge venant de toi, faits par toi ! Cela, comme à moi, doit te remplir le cœur de joie. Ainsi hier j'ai visité deux maisons dont les habitants viennent de se convertir. J'ai arraché moi-même toutes leurs superstitions ; jeté dehors leur brûle-parfum en terre, leurs pierres idolâtriques ; et je vais les remplacer par q.q. unes de tes images. Au point de vue de la foi quels changements pour ces pauvres gens ! et quels mérites pour nous de leur faire connaître le Créateur du ciel et de la terre, de détruire le règne du démon, et faire aimer à sa place Dieu et la Ste Vierge !</div><div class="zh" lang="zh-CN">我已经把你的圣牌分给了新受洗的孩子们，那是多么幸福啊！那些抛弃偶像的异教孩子，我从他们脖子上扯下撒旦的护身符，换上一枚漂亮的圣牌和一根蓝色或红色的绳子，都是你寄来的、你亲手做的！那是多么快乐啊！这一定也像让我一样，让你满心欢喜。就在昨天，我去了两户刚刚归化的人家。我亲手拆掉了他们所有的迷信之物；把他们的陶土香炉、他们供奉的神石统统扔了出去；我要用你寄来的几幅圣像来代替。从信仰来看，这对这些可怜人是多大的改变啊！而让他们认识天地的创造者、摧毁魔鬼的统治、代之以爱天主和圣母，对我们又是多大的功德啊！</div></div><div class="row"><div class="fr" lang="fr">En ce moment j'instruis une trentaine de païens. Quelle ignorance que la leur ! Je leur fais le catéchisme depuis 15 jours ; <span class="pg">p. 3</span> chaque jour, 1 heure le matin et autant le soir ; littéralement j'en ai mal à la gorge et la poitrine en feu, jusque-là je ne leur ai parlé que des principaux mystères, de l'Enfer et du Ciel ; je crois qu'ils commencent à me comprendre, car ça se lit sur leurs visages ; on y voit la joie d'une âme qui découvre Dieu, qui s'aperçoit qu'elle est heureuse de le connaître et de l'aimer.</div><div class="zh" lang="zh-CN">眼下我正在给三十来个异教徒讲道理。他们无知到了何等地步！我给他们讲要理已经十五天了；<span class="pg">第 3 页</span> 每天早上一小时，晚上也一小时；我真是喉咙疼、胸口火辣辣的。到目前为止，我只给他们讲了几端主要的奥迹，讲了地狱和天堂；我想他们开始听懂了，因为这从他们脸上就看得出来；那上面有一个灵魂发现天主时的喜悦，它发觉认识祂、爱慕祂是多么幸福。</div></div><div class="row"><div class="fr" lang="fr">Je prie le bon Dieu de me conserver la voix ; mais si je devais la perdre pour le faire connaître, je ne la regretterais pas. Ni vous non<span class="unc" title="辨认不确定">?</span> plus, chère cousine aux blanches ailes ? S'il plaît à Dieu, pendant un mois je vais prêcher dans ce village ; le mois prochain dans un autre, et puis dans un autre. Car ce n'est guère qu'en hiver qu'on peut réunir ces braves gens. Je n'ai donc pas besoin de te demander de prier pour moi. Tu vois que c'est surtout la grâce de Dieu qu'il nous faut pour convertir et instruire ces pauvres païens.</div><div class="zh" lang="zh-CN">我求仁慈的天主保住我的嗓子；但如果为了让人认识祂而必须失去它，我也不会惋惜。您也不会吧<span class="unc" title="辨认不确定">?</span>，戴白翼帽的表妹<sup class="nref"><a href="#n6-1" id="r6-1">1</a></sup>？若天主许可，我将在这个村子讲道一个月；下个月到另一个村子，然后再到下一个。因为只有在冬天才能把这些老实人召集起来。所以我不必再请你为我祈祷了。你看，归化和教导这些可怜的异教徒，我们最需要的就是天主的恩宠。</div></div><div class="row"><div class="fr" lang="fr">Tes Sœurs sont bien aimables de s'unir à toi pour nous aider. Tu peux leur dire qu'elles auront aussi une part dans la récompense de l'ouvrier de l'Évangile. Remercie surtout ta R. M. Supérieure de la bonté qu'elle <span class="pg">p. 4</span> nous témoigne.</div><div class="zh" lang="zh-CN">你的修女们真好，和你一起帮助我们。你可以告诉她们，在福音工人的赏报中，她们也会有一份。尤其要替我感谢你的院长嬷嬷对我们的 <span class="pg">第 4 页</span> 厚爱。</div></div><div class="row"><div class="fr" lang="fr">Les nouvelles que tu nous donnes de ta mère, frères et sœurs nous sont très agréables. Tu peux leur dire que je ne sépare pas leur souvenir du tien ; et qu'eux aussi servent le bon Dieu et le fassent aimer par leurs bons exemples. Que ta bonne mère surtout ne nous oublie pas. Dieu lui a donné une fille digne d'elle dans la femme de Joseph ; il me semble qu'à présent elle s'occupe davantage à prier pour les siens morts et vivants. Un jour nous serons tous réunis autour de Notre Père au ciel ; et avec quelle joie on se racontera les souffrances de la terre qui nous auront mérité un si beau ciel et un si beau jour de réunion !</div><div class="zh" lang="zh-CN">你告诉我们的有关你母亲和兄弟姊妹的消息，让我们非常高兴。你可以告诉他们，我想起你时也总想起他们；也愿他们侍奉仁慈的天主，用好榜样使人爱慕天主。尤其愿你的好母亲不要忘记我们。天主赐给她一个配得上她的好儿媳——约瑟夫的妻子；我觉得她现在更专心为她已故和在世的亲人祈祷了。总有一天，我们都会在天上团聚在我们的天父周围；那时我们将多么欢喜地彼此讲述世上的苦难，正是这些苦难为我们赚得了如此美好的天堂和如此美好的团聚之日！</div></div><div class="row"><div class="fr" lang="fr">Donc, au revoir au ciel, et que tous ceux qui nous aiment ne manquent pas à ce rendez-vous-là ; sans cela ça serait bien triste pour eux.</div><div class="zh" lang="zh-CN">那么，天上再见了，愿所有爱我们的人都不要错过这个约会；否则对他们来说就太可悲了。</div></div><div class="row"><div class="fr" lang="fr">Ton cousin qui te bénit de tout cœur</div><div class="zh" lang="zh-CN">衷心祝福你的表哥</div></div><div class="row"><div class="fr" lang="fr">Théodore<br>m. apost. Thibet</div><div class="zh" lang="zh-CN">泰奥多尔<br>西藏宗座传教士</div></div><div class="row"><div class="fr" lang="fr">Dans ton prochain colis (que tu enverras aussi par Taly<span class="unc" title="辨认不确定">?</span> pour plus de sûreté) ajoutes-y de la poudre pour faire de l'encre ; la mienne ici est affreuse ; de la vraie noire ; et pas moyen d'écrire ; et puis des <span class="ed">[choses ?]</span> pratiques, <span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span> <span class="ed">[dernière ligne coupée sur la copie]</span></div><div class="zh" lang="zh-CN">你下次寄包裹时（为了稳妥，也请经大理<span class="unc" title="辨认不确定">?</span>寄），请加一些制墨水用的墨粉；我这里的墨水糟透了；要真正的黑色的；简直没法写字；另外再加些实用的<span class="ed">〔东西?〕</span>，<span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span><span class="ed">〔最后一行在复印件上被截掉〕</span></div></div><div class="row marg"><div class="fr" lang="fr"><span class="ed">[En marge gauche, à la verticale :]</span> <span class="ed">[Je]</span> n'ai pas honte encore de te demander à l'occasion une bonne petite chaîne pour suspendre au cou croix et médaille<span class="ed">[s]</span> ; mon ancienne est usée.</div><div class="zh" lang="zh-CN"><span class="ed">〔左侧页边竖写：〕</span>我还好意思请你有机会时给我一条结实的小链子，用来把十字架和圣牌挂在脖子上；我原来那条已经磨坏了。</div></div>
+  </div>
+  <aside class="notes"><h3>译注</h3><ol><li id="n6-1"><span class="nnum">1</span><span>仁爱会（Filles de la Charité）修女戴白色宽檐翼帽（cornette），故称“白翼”。“您也不会吧”一句原文语法省略，辨认也不完全确定。</span> <a class="back" href="#r6-1" aria-label="返回正文">↩</a></li></ol></aside>
+</article>
+
+<article class="letter" id="l7">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">7</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 7 封 · 复印件 · 4 页</p>
+      <h2>1912 年 3 月 27 日</h2>
+      <p class="frdate" lang="fr">Tsedjrong, le 27 mars 1912</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Tsedjrong</span> · 茨中（推断）</dd></div>
+        <div><dt>收信人</dt><dd>兄弟阿道夫</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 27 mars 1912 _001 · _002</dd></div>
+      </dl>
+      <div class="flags"><span class="flag">不完整：第 4 页之后缺失</span></div>
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row ednote"><div class="fr" lang="fr">Photocopie. Ordre des pages : 001 droite → 002 gauche → 002 droite → 001 gauche. Le texte s'interrompt à la fin de la p. 4 ; la suite ne figure pas dans le dossier.</div><div class="zh" lang="zh-CN">复印件。正文在第 4 页末尾中断，后续页面不在本卷宗中。</div></div><div class="row"><div class="fr" lang="fr">Tsedjrong, le 27 mars 1912</div><div class="zh" lang="zh-CN">Tsedjrong，1912 年 3 月 27 日</div></div><div class="row"><div class="fr" lang="fr">Bien cher Adolphe,</div><div class="zh" lang="zh-CN">非常亲爱的阿道夫：</div></div><div class="row"><div class="fr" lang="fr">Très intéressante ta lettre de janvier dernier. Maman nous l'avait annoncée, et nous n'avons pas été déçus, au contraire. Aussi mille remerciements et encouragements.</div><div class="zh" lang="zh-CN">你一月份的信非常有意思。妈妈事先跟我们说过有这封信，我们不但没有失望，反而喜出望外。所以千万个感谢，也千万个鼓励。</div></div><div class="row"><div class="fr" lang="fr">Je remercie le bon Dieu de vous donner à tous bonne santé, malgré les petits accidents de la vie ou de l'âge : ce sont les petites croix avec lesquelles chacun gagne son ciel. Si la terre était douce et heureuse nous n'aurions pas assez soif de la vie sans nuage du ciel. Pour nous, grâce à Dieu, nous jouissons d'une excellente santé. Je ne travaille guère la terre ce qui me donnerait un peu de force musculaire, mais les déplacements presque continuels pour notre ministère me dégourdissent assez les jambes. Ce qui me fatigue le plus c'est de parler. Quand dans une journée j'ai catéchisé 2 ou 3 heures, c'est avec plaisir que je vais fumer une pipe en me promenant dans le jardin quand je suis à la maison, ou sur les <span class="pg">p. 2</span> montagnes d'alentour. Ce qui me gêne aussi toujours (c'est une confession que je te fais) c'est de me lever le matin ; et cependant je me lève tous les jours à 5 h. au moins. Mais c'est mon compagnon qui vient frapper à ma porte qui me réveille ; sans cela ce sont les moineaux qui sont mon réveil-matin. Autrefois c'était le bon P. Dubernard qui entrait dans ma chambre, allumait ma chandelle, et au besoin la fumée de sa pipe me forçait à me lever.</div><div class="zh" lang="zh-CN">我感谢仁慈的天主让你们大家都身体健康，尽管生活中或年纪上难免有些小毛病：这些都是小十字架，每个人就靠它们赚得自己的天堂。如果尘世甜蜜而幸福，我们就不会那么渴望天上那无云的生活了。至于我们，感谢天主，身体都非常好。我几乎不干农活，农活倒能让我长点力气；不过为了传教几乎不停地奔走，腿脚也就够灵活了。最让我累的是说话。哪天讲了两三个小时的要理，在家时，我就很乐意到园子里一边散步一边抽一斗烟，或是到 <span class="pg">第 2 页</span> 附近的山上去走走。还有一件事一直让我为难（我这是在向你告解）：早上起床；可我每天至少五点钟就起来了。不过那是我的同伴来敲门把我叫醒的；没有他，我的闹钟就是麻雀。从前是好心的杜贝尔纳神父走进我的房间，点上我的蜡烛，必要时用他烟斗的烟把我熏起来。</div></div><div class="row"><div class="fr" lang="fr">Mais cela ne sont que vétilles, tu le vois bien, et notre travail, notre souci à nous, c'est d'étendre le royaume de Dieu sur la terre afin que le ciel soit <del>bien</del> peuplé le plus possible. Tiens, hier, des païens m'amenaient leur petite fillette malade ; ils ne se sont pas doutés que l'eau que j'ai versée sur son front enverra sous peu son âme au paradis. En ce moment j'instruis une 12ne de grandes personnes en vue du baptême ; la plus vieille a bien 60 ans. En voilà une qui aura de la chance aussi !</div><div class="zh" lang="zh-CN">不过你也看得出，这些都是小事；我们的工作，我们的心事，是在地上扩展天主的国，好让天堂尽可能 <del>很</del> 住满人。比方说，昨天有些异教徒把他们生病的小女儿带来找我；他们没想到，我倒在她额头上的水不久就会把她的灵魂送进天堂。眼下我正在给十二三个成年人讲道理，准备领洗；年纪最大的足有 60 岁。这位老人也真算有福气！</div></div><div class="row"><div class="fr" lang="fr">Tu me dis ce que compte faire votre nouveau curé de St Martin. Il paraît inspiré des meilleures intentions et ne pas plaindre sa peine. Aussi je crois qu'il réussira à attirer bien des âmes dans <span class="pg">p. 3</span> la voie du salut. Ce qui perd le peuple ce sont les préjugés de toutes sortes, le matérialisme qui ne fait penser qu'à la vie présente, et croire que l'homme n'a rien à faire après la mort. En somme c'est le paganisme qui reprend. Chacun veut jouir, veut être riche, veut se monter d'un degré, et on ne fait pas attention qu'on perd ce qu'il y a de plus précieux, l'âme. Chacun veut user de ses prétendus droits à la vie, et on néglige ses devoirs essentiels. Telle la femme qui ne veut pas être mère pour jouir ou gagner davantage. Tous ces gens-là seront bien surpris le jour de leur mort ayant les mains vides. Il vaut mieux avoir soif du ciel que de la terre. Et ne vous suffit-il pas de pouvoir aider à établir vos enfants et leur donner les moyens de gagner leur vie, plutôt que de leur donner cette soif insatiable des richesses qui empoisonne l'honnête bonheur que chacun peut attendre de cette vie. — Excuse mon sermon, mais je voudrais tant que tous les miens ne manquent pas le train, comme on dit, et ne se trompent pas sur le vrai bonheur !</div><div class="zh" lang="zh-CN">你跟我说了你们圣马丁堂区的新本堂神父的打算。他看来满怀善意，又肯吃苦。所以我相信他会成功地把许多灵魂引上 <span class="pg">第 3 页</span> 得救之路。毁掉老百姓的是各种各样的成见，是只让人想着今生、以为人死后就无事可做的唯物主义。说到底，这是异教又卷土重来了。人人都想享乐，想发财，想往上爬一级，却没注意到自己正在失去最宝贵的东西：灵魂。人人都想行使自己所谓的生活权利，却忽略了根本的义务。比如有的女人为了享乐或多挣钱而不愿做母亲。这些人在死的那天两手空空，会大吃一惊的。渴慕天堂总比渴慕尘世好。能帮着把孩子们安顿好，给他们谋生的本事，这对你们难道还不够吗？何必让他们染上对财富的贪得无厌，那会毒害每个人本可从此生期待的正当幸福。——请原谅我的说教，可我多么希望我所有的亲人都不要“误了这班火车”（俗话这么说），不要把真正的幸福弄错了！</div></div><div class="row"><div class="fr" lang="fr">Je pense que vous aurez reçu sans grand retard nos lettres depuis 3 mois qui vous tranquilliseront sur notre sort. Vous aurez vu d'ailleurs par les journaux que les événements graves<span class="unc" title="辨认不确定">?</span> de Chine <span class="pg">p. 4</span> sont graves pour la Chine mais pas pour les européens ; grâce à Dieu nous sommes toujours en paix dans notre petit coin. Des contrecoups seuls peuvent nuire ; mais on les voit venir à l'avance.</div><div class="zh" lang="zh-CN">我想三个月来我们寄的信你们大概都已及时收到，可以对我们的处境放心了。何况你们也会从报纸上看到，中国的那些重大事件<span class="unc" title="辨认不确定">?</span><sup class="nref"><a href="#n7-1" id="r7-1">1</a></sup><span class="pg">第 4 页</span> 对中国来说是严重的，对欧洲人却不然；感谢天主，我们在自己的小角落里一直平安无事。只有余波可能波及我们；不过余波来之前总能预先看到。</div></div><div class="row"><div class="fr" lang="fr">Merci, cher Adolphe pour l'envoi que tu nous fais de vin de tes vignes. Il sera le bienvenu, car du vieux il ne reste que 3 bouteilles comme semence. Nous le recevrons sans doute sous peu via Hanoï-Yunnansen. Je crains seulement que les tonneaux ne soient un peu<span class="unc" title="辨认不确定">?</span> gros pour voyager à dos de mulet (25 litres suffisent) ; quant à les transporter de la gare de Yunnansen ici à dos d'homme ce serait coûteux. Les bouchons aussi ont leur utilité ; merci de la bonne idée. Tous les ans je fais de la conserve de tomates très économique. Voici la recette qu'Émile a adoptée : faire cuire un peu les tomates avec piment, puis la tamiser ; faire réduire ensuite la pulpe jusqu'à consistance de confiture et mettre en pots ou mieux en bouteilles. Avis aux ménagères !</div><div class="zh" lang="zh-CN">谢谢你，亲爱的阿道夫，给我们寄来你自家葡萄园的酒。这酒来得正是时候，因为陈酒只剩下 3 瓶“当种子”了。我们大概不久就会经河内—云南府<sup class="nref"><a href="#n7-2" id="r7-2">2</a></sup>收到它。我只担心木桶有点<span class="unc" title="辨认不确定">?</span>大，不便驮在骡背上（25 升的就够了）；至于从云南府车站请人背到这里，那就太贵了。软木塞也有用处；谢谢你想得周到。我每年都做番茄酱，非常省钱。下面是埃米尔采用的做法：把番茄和辣椒一起稍微煮一下，然后过筛；再把果泥熬到果酱那么稠，装进罐子，最好是装进瓶子。主妇们请注意！</div></div><div class="row"><div class="fr" lang="fr">À propos tu feras bien de féliciter Émile. Il a tout simplement décroché une décoration de … l'empereur d'Allemagne tout simplement !!! Il paraît qu'il a travaillé pour le roi de Prusse en faisant parvenir à leurs <span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span></div><div class="zh" lang="zh-CN">顺便说一句，你该向埃米尔道贺。他居然得到了一枚勋章，是……德国皇帝颁的，就是这么简单！！！看来他“为普鲁士国王干了活”<sup class="nref"><a href="#n7-3" id="r7-3">3</a></sup>，把……送到了他们的<span class="gap" title="原件缺损或无法辨认"><span class="ed">[…]</span></span></div></div><div class="row ednote"><div class="fr" lang="fr"><span class="ed">[fin de la page ; suite manquante]</span></div><div class="zh" lang="zh-CN"><span class="ed">〔此页至此结束，后续页面缺失〕</span></div></div>
+  </div>
+  <aside class="notes"><h3>译注</h3><ol><li id="n7-1"><span class="nnum">1</span><span>指辛亥革命后的局势。</span> <a class="back" href="#r7-1" aria-label="返回正文">↩</a></li><li id="n7-2"><span class="nnum">2</span><span>滇越铁路（河内—云南府）1910 年全线通车。</span> <a class="back" href="#r7-2" aria-label="返回正文">↩</a></li><li id="n7-3"><span class="nnum">3</span><span>法语俗语 “travailler pour le roi de Prusse”（为普鲁士国王干活），意为白干、得不到报酬；德国皇帝同时也是普鲁士国王，这里是双关的玩笑。</span> <a class="back" href="#r7-3" aria-label="返回正文">↩</a></li></ol></aside>
+</article>
+
+<article class="letter" id="l8">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">8</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 8 封 · 复印件 · 2 页</p>
+      <h2>1912 年 6 月 5 日</h2>
+      <p class="frdate" lang="fr">Tsekou, le 5 juin 1912</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Tsekou</span> · 茨菇</dd></div>
+        <div><dt>收信人</dt><dd>兄弟阿道夫</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 5 janvier 1912 _001 · _002</dd></div>
+      </dl>
+      <div class="flags"><span class="flag">文件名误作 5 janvier 1912</span></div>
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row ednote"><div class="fr" lang="fr">Photocopie. Chiffres au crayon dans la marge et en bas de la p. 1 (calculs sans rapport avec le texte), non transcrits.</div><div class="zh" lang="zh-CN">复印件。第 1 页页边和底部有铅笔演算数字，与正文无关，未译出。</div></div><div class="row motto"><div class="fr" lang="fr">✝ Dieu et les âmes.</div><div class="zh" lang="zh-CN">✝ 天主与灵魂。</div></div><div class="row"><div class="fr" lang="fr">Tsekou, le 5 juin 1912</div><div class="zh" lang="zh-CN">茨菇，1912 年 6 月 5 日</div></div><div class="row"><div class="fr" lang="fr">Bien cher Adolphe,</div><div class="zh" lang="zh-CN">非常亲爱的阿道夫：</div></div><div class="row"><div class="fr" lang="fr">J'ai bien répondu à ta dernière lettre ; mais le tonneau n'était pas encore là. Aussi l'autre jour ai-je dit à Émile que je t'en accuserais réception à mon tour. Caisse et tonneaux sont donc arrivés en bon état, et les tonneaux n'ont pas été trop lourds ni trop volumineux comme je le craignais ; c'est bien ce qu'il faut. Le vin n'a pas gagné au voyage ; mais une fois ici <del>et</del> au repos, il a changé un peu et s'est amélioré.</div><div class="zh" lang="zh-CN">我确实回过你上一封信；不过那时木桶还没到。所以前几天我跟埃米尔说，我也要亲自告诉你东西收到了。箱子和木桶都完好无损地到了，木桶也不像我担心的那样太重太大；这样正合适。酒在路上没有变好；不过到这里歇了一阵子，味道有些变化，变好了。</div></div><div class="row"><div class="fr" lang="fr">Quant à l'eau-de-vie de marc, elle est superfine, et vaut mieux que toutes les fines champagnes et cognac qu'on voit quelquefois par ici par les explorateurs.</div><div class="zh" lang="zh-CN">至于葡萄渣白兰地，那可是上等货，比探险家们偶尔带到这里来的那些上等香槟区白兰地和干邑都强。</div></div><div class="row"><div class="fr" lang="fr">Ton envoi a été parfaitement reçu. <span class="pg">p. 2</span> Aussi pendant mon séjour chez Émile, (presque tout mai) y avons-nous fait honneur. Et nous en avons fait des causeries sur la famille et Salies ! Cependant bien des détails nous échappent dans le lointain ; aussi avons-nous résolu de te demander certains renseignements qui nous feront bien plaisir. D'abord l'âge de nos parents, puis un livre sur les origines et l'histoire de Salies. Autrefois j'en lus un petit de ce genre ; Émile ne l'a jamais lu. Je ne doute pas qu'il y soit encore, ou bien même qu'il y en ait paru un nouveau plus volumineux. Envoie-le nous par la poste.</div><div class="zh" lang="zh-CN">你寄来的东西都完好收到了。<span class="pg">第 2 页</span> 所以我在埃米尔那里小住的时候（差不多整个五月），我们好好享用了一番。我们还借着酒聊了不少家里和萨利的事！可是远隔万里，许多细节我们都记不清了；所以我们决定向你打听一些情况，这会让我们很高兴。首先是父母的年纪，其次是一本讲萨利起源和历史的书。从前我读过一本这类的小书；埃米尔从没读过。我想那本书应该还在，说不定还出了一本更厚的新书。请通过邮局寄给我们。</div></div><div class="row"><div class="fr" lang="fr">Avec Émile nous allâmes faire un tour à notre petite capitale Oui-sy. C'est comme si on allait de Salies à Pau. Nous fîmes la route en 2 demi-journées à mule, et au retour en un jour. Qu'on soit à la maison ou en route on pouvait toujours causer. Aussi on n'a guère tari ; et tous les sujets</div><div class="zh" lang="zh-CN">我和埃米尔一起去了一趟我们的“小首府”维西。就像从萨利到波城那样。我们骑骡子走了两个半天，回来只用了一天。不管在家还是在路上，我们总有话说。所以我们几乎说个不停；什么话题都</div></div><div class="row marg"><div class="fr" lang="fr"><span class="ed">[En marge gauche de la p. 2, à la verticale :]</span> sont passés. — Ceci n'est qu'un simple billet destiné à toi seul. Tu diras seulement aux autres que nous jouissons d'une bonne santé.</div><div class="zh" lang="zh-CN"><span class="ed">〔第 2 页左侧页边竖写：〕</span>聊遍了。——这只是一张写给你一个人的便条。你只要告诉其他人，我们都身体健康就行了。</div></div><div class="row marg"><div class="fr" lang="fr"><span class="ed">[En marge gauche de la p. 1, à la verticale :]</span> Je fais des vœux pour que vos récoltes de cette année soient bonnes, vous dédommageant de tous vos efforts. Que le bon Dieu vous garde en bonne santé !</div><div class="zh" lang="zh-CN"><span class="ed">〔第 1 页左侧页边竖写：〕</span>祝愿你们今年收成好，不负你们的一切辛劳。愿仁慈的天主保佑你们身体健康！</div></div><div class="row"><div class="fr" lang="fr">Ton frère qui t'aime</div><div class="zh" lang="zh-CN">爱你的兄弟</div></div><div class="row"><div class="fr" lang="fr">Théodore</div><div class="zh" lang="zh-CN">泰奥多尔</div></div>
+  </div>
+  
+</article>
+
+<article class="letter" id="l9">
+  <header class="lhead">
+    <div class="lnum" aria-hidden="true">9</div>
+    <div class="lmeta">
+      <p class="eyebrow">第 9 封 · 复印件 · 4 页</p>
+      <h2>1912 年 8 月 5 日</h2>
+      <p class="frdate" lang="fr">Siao-ouy-sy, le 5 août 1912</p>
+      <dl>
+        <div><dt>地点</dt><dd><span lang="fr">Siao-ouy-sy</span> · 小维西</dd></div>
+        <div><dt>收信人</dt><dd>父母（附埃米尔 8 月 9 日附言）</dd></div>
+        <div><dt>档案文件</dt><dd class="mono">Lettre du 3 août 1912 _001 · _002</dd></div>
+      </dl>
+      <div class="flags"><span class="flag">文件名误作 3 août 1912</span></div>
+    </div>
+  </header>
+  <div class="colheads" aria-hidden="true"><span class="fr">Français · 原文转录</span><span class="zh">中文 · 译文</span></div>
+  <div class="pairs">
+    <div class="row ednote"><div class="fr" lang="fr">Photocopie. Ordre des pages : 001 droite → 002 gauche → 002 droite → 001 gauche. Post-scriptum de la main d'Émile Monbeig.</div><div class="zh" lang="zh-CN">复印件。末尾附有埃米尔·蒙贝格的亲笔附言。</div></div><div class="row motto"><div class="fr" lang="fr">✝ Dieu et les âmes.</div><div class="zh" lang="zh-CN">✝ 天主与灵魂。</div></div><div class="row"><div class="fr" lang="fr">Siao-ouy-sy, le 5 Août 1912</div><div class="zh" lang="zh-CN">小维西，1912 年 8 月 5 日</div></div><div class="row"><div class="fr" lang="fr">Bien chers Parents,</div><div class="zh" lang="zh-CN">非常亲爱的父母：</div></div><div class="row"><div class="fr" lang="fr">Me voici à Siao-ouy-sy où je suis venu pousser un bout de visite à Émile. J'avais passé 5 jours à une journée d'ici, et alors j'en ai profité.</div><div class="zh" lang="zh-CN">我现在在小维西，是来看望埃米尔的。我先前在离这里一天路程的地方待了五天，就顺便过来了。</div></div><div class="row"><div class="fr" lang="fr">Je me hâte de vous dire que notre santé à tous deux est excellente malgré les chaleurs de l'été. Les pluies qui avaient tardé un peu sont enfin venues rafraîchir l'atmosphère et permettre aux laboureurs de semer maïs et sarrasin.</div><div class="zh" lang="zh-CN">我赶紧告诉你们，尽管夏天炎热，我们俩身体都很好。迟来了些日子的雨终于下了，空气凉爽了，农民也可以种玉米和荞麦了。</div></div><div class="row"><div class="fr" lang="fr">L'autre jour en route je rencontrai le courrier qu'Émile <span class="pg">p. 2</span> nous envoyait à Tsedjrong. Il y avait entre autres une longue et intéressante lettre du capitaine d'Angoulême. Je la lus avec plaisir à cheval ainsi que les autres nouvelles agréables et tristes du pays : la baisse des radicaux aux élections, la perte du Nivôse<span class="unc" title="辨认不确定">?</span> je crois, la guerre du Maroc qui recommence de plus belle et où Amédée grille d'aller gagner son 2me galon (du moins il le fait comprendre).</div><div class="zh" lang="zh-CN">前些天我在路上碰到了埃米尔 <span class="pg">第 2 页</span> 派人送往 Tsedjrong 给我们的邮件。其中有一封昂古莱姆那位上尉写来的长信，很有意思。我骑在马上高兴地读了，也读了家乡其他的好消息和坏消息：激进党在选举中失势；我想还有 Nivôse<span class="unc" title="辨认不确定">?</span>号的失事<sup class="nref"><a href="#n9-1" id="r9-1">1</a></sup>；摩洛哥战事又打得更凶了，阿梅代急着要去那里挣他的第二道杠（至少他是这么暗示的）<sup class="nref"><a href="#n9-2" id="r9-2">2</a></sup>。</div></div><div class="row"><div class="fr" lang="fr">Mais pas besoin d'aller au Maroc pour voir la guerre. Ici même au Thibet nous voyons passer souvent des armées chinoises pour aller reconquérir leur Thibet que les Thibétains veulent garder pour eux. Ceux-ci nous assurent qu'ils n'en veulent ni aux missionnaires ni aux chrétiens. Cependant les chrétiens et Pères des postes rapprochés des opérations militaires ont jugé bon de se <span class="pg">p. 3</span> mettre à l'abri des attentats inévitables. On ne sait au juste ce qui arrivera. On dit que les anglais poussent les Thibétains à l'indépendance ; si c'est vrai les chinois y perdront bien q.q. chose. Ceux-ci parlementent, il paraît, avec le Dalaï lama aux Indes. Sans doute l'Angleterre servira d'interprète comme entre la France et l'Espagne.</div><div class="zh" lang="zh-CN">其实不必去摩洛哥也能看到战争。就在这里，在西藏，我们常看到中国军队经过，去重新征服他们的西藏，而藏人则想把西藏留给自己。藏人向我们保证，他们既不跟传教士过不去，也不跟教友过不去。不过，离军事行动较近的那些传教站的教友和神父们，还是认为最好 <span class="pg">第 3 页</span> 躲一躲，以防难以避免的袭击。谁也说不准会发生什么。据说是英国人在鼓动藏人独立；如果真是这样，中国人可要损失点什么了。听说中国人正在跟远在印度的达赖喇嘛谈判<sup class="nref"><a href="#n9-3" id="r9-3">3</a></sup>。英国大概会像在法国和西班牙之间那样当中间人<sup class="nref"><a href="#n9-4" id="r9-4">4</a></sup>。</div></div><div class="row"><div class="fr" lang="fr">En tous cas n'ayez aucune crainte pour nous. Les opérations militaires n'ont lieu qu'à 10 jours de Tsedjrong, au nord. De plus comme je l'ai dit, les Thibétains stylés sans doute par les anglais, ne veulent pas de complications avec nous.</div><div class="zh" lang="zh-CN">无论如何，你们一点都不必为我们担心。军事行动只在 Tsedjrong 以北十天路程的地方进行。而且，我已经说过，藏人想必受了英国人的指点，不愿跟我们发生纠葛。</div></div><div class="row"><div class="fr" lang="fr">Bref, plus la civilisation marche, plus les hommes sont divisés entre eux, plus il y a de guerres. C'est qu'aujourd'hui on ne se bat plus pour un idéal mais pour <span class="pg">p. 4</span> la fortune et le commerce.</div><div class="zh" lang="zh-CN">总之，文明越前进，人与人就越分裂，战争就越多。这是因为如今人们不再为理想而战，而是为 <span class="pg">第 4 页</span> 财富和商业而战。</div></div><div class="row"><div class="fr" lang="fr">J'espère que cette année vous sera favorable sous tous les rapports. Que le bon Dieu vous accorde une bonne santé et la paix du cœur dans la foi et la prière. J'espère aussi que les récoltes seront abondantes et récompenseront tous vos efforts. C'est encore la terre, avec la bénédiction de Dieu, qui nourrit le mieux les bras qui la travaillent !</div><div class="zh" lang="zh-CN">愿今年各方面都对你们有利。愿仁慈的天主赐给你们健康，赐给你们在信德和祈祷中的心灵平安。也愿收成丰盛，报偿你们的一切辛劳。毕竟，有了天主的祝福，还是土地最能养活耕种它的双手！</div></div><div class="row"><div class="fr" lang="fr">Je vous embrasse de cœur, et veuillez saluer pour moi tous les membres petits et grands de la famille sans oublier les amis et voisins.</div><div class="zh" lang="zh-CN">衷心拥抱你们，请代我问候家里大大小小每一个人，也别忘了朋友和邻居们。</div></div><div class="row"><div class="fr" lang="fr">Votre tout affectionné</div><div class="zh" lang="zh-CN">你们最亲爱的</div></div><div class="row"><div class="fr" lang="fr">Th. Monbeig</div><div class="zh" lang="zh-CN">Th. 蒙贝格</div></div><div class="row"><div class="fr" lang="fr">9 Août</div><div class="zh" lang="zh-CN"><span class="ed">〔埃米尔附言：〕</span>8 月 9 日</div></div><div class="row"><div class="fr" lang="fr">Je me réserve pour une autre fois, car je suis pris par le courrier qui part immédiatement. J'embrasse tout le monde.</div><div class="zh" lang="zh-CN">这次我就不多写了，因为信差马上就要走。拥抱大家。</div></div><div class="row"><div class="fr" lang="fr">É. Monbeig</div><div class="zh" lang="zh-CN">É. 蒙贝格</div></div>
+  </div>
+  <aside class="notes"><h3>译注</h3><ol><li id="n9-1"><span class="nnum">1</span><span>原文辨认不确定。1912 年 6 月法国潜艇“葡月号”（Vendémiaire）沉没，写信人自己也说“我想”，名称或有误记。</span> <a class="back" href="#r9-1" aria-label="返回正文">↩</a></li><li id="n9-2"><span class="nnum">2</span><span>“第二道杠”（2e galon）指军衔晋升，通常即由少尉升中尉。</span> <a class="back" href="#r9-2" aria-label="返回正文">↩</a></li><li id="n9-3"><span class="nnum">3</span><span>十三世达赖喇嘛 1910–1912 年间流亡印度。</span> <a class="back" href="#r9-3" aria-label="返回正文">↩</a></li><li id="n9-4"><span class="nnum">4</span><span>1912 年法国与西班牙关于摩洛哥的谈判中，英国曾居间斡旋。</span> <a class="back" href="#r9-4" aria-label="返回正文">↩</a></li></ol></aside>
+</article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>来源：IRFA（Institut de recherche France-Asie）档案，卷宗 4CTi-MAR-020，扫描件 20 张。</p>
+    <p>法文转录与中文译文由 Claude 根据扫描件辨认整理（2026 年 10 月）。标有 <span class="unc" style="vertical-align:baseline">?</span> 的人名、地名和字词请以原件为准。</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var main = document.getElementById('main');
+  var buttons = document.querySelectorAll('.seg button');
+  function setMode(mode, save) {
+    main.setAttribute('data-mode', mode);
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === mode)); });
+    if (save) { try { localStorage.setItem('monbeig-mode', mode); } catch (e) {} }
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setMode(b.dataset.mode, true); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('monbeig-mode'); } catch (e) {}
+  if (saved === 'zh' || saved === 'fr' || saved === 'both') setMode(saved, false);
+})();
+</script>
+</body>
+</html>
